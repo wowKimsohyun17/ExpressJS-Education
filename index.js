@@ -9,7 +9,6 @@ app.set('views', './views');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
-var db = require('./db');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,16 +18,18 @@ app.use(cookieParser());
 var booksRoute = require('./routes/books.route');
 var transRoute = require('./routes/transactions.route');
 var usersRoute = require('./routes/user.route');
+var authRoute = require('./routes/auth.route');
+var authRequire = require('./middleware/auth.middleware');
 
 app.get("/", (request, response) => {
   response.cookie('user-id', 1999);
   response.render('index');
 });
 
-// send the default array of dreams to the webpage
 app.use('/books', booksRoute);
 app.use('/transactions', transRoute);
-app.use('/users', usersRoute)
+app.use('/users', authRequire.requireAuth, usersRoute);
+app.use('/auth', authRoute);
 
 // listen for requests :)
 const listener = app.listen( port, () => {

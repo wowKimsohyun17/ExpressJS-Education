@@ -4,8 +4,9 @@ var router = express.Router();
 var controller = require('../controller/users.controller');
 var validate = require('../validate/user.validate');
 var countCookies = require('../middleware/countCookies');
+var requireAuth = require('../middleware/auth.middleware');
 
-router.get('/', countCookies.countCookies, controller.index);
+router.get('/', controller.index);
 
 router.get('/create', countCookies.countCookies, controller.create);
 
