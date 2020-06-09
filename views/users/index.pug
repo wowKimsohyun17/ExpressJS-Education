@@ -1,0 +1,21 @@
+extends ../layout/common.pug
+
+block content
+  h1 Users
+  form(action="/users", method="GET")
+    input.mr-2(type="text", name="q", value=q)
+    button Search
+  
+  table.table
+    tr
+      th Name
+      th Phone
+      th
+    each user in users
+      tr
+        td= user.name
+        td= user.phone
+        td
+          a.btn.btn-dark(href="/users/" + user.id + "/view") View
+        
+  a.btn-primary.btn(href="/users/create") Tạo người dùng mới

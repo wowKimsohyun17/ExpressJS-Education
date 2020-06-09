@@ -1,0 +1,24 @@
+extends ../layout/common
+
+block content
+  h1 Tủ sách
+  
+  table.table
+    tr
+      th Name
+      th Description
+      th
+      th
+      th
+      each book in books
+        tr
+          td= book.title
+          td= book.description
+          td
+            a(href="/books/" + book.id + "/view") Xem
+          td
+            a(href="/books/" + book.id + "/edit") Sửa
+          td
+            a(href="/books/" + book.id + "/delete") Xóa
+
+  a.btn.btn-primary(href="/books/create") Thêm sách mới

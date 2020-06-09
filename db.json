@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Cao Quý Đăng",
+      "phone": 123456789
+    },
+    {
+      "id": 2,
+      "name": "Kim So Hyun",
+      "phone": 123456789
+    },
+    {
+      "id": 3,
+      "name": "Ji Chang Wook",
+      "phone": 123456789
+    },
+    {
+      "id": 4,
+      "name": "Jang Nara",
+      "phone": 123456789
+    },
+    {
+      "id": 5,
+      "name": "Hoa Thiên Cốt",
+      "phone": 123456789
+    },
+    {
+      "id": 6,
+      "name": "Vũ Hoàng Minh Hằng",
+      "phone": 123456789
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Koe no katachi",
+      "description": "This is legendary Anime!"
+    },
+    {
+      "id": 2,
+      "title": "Jungle of Books",
+      "description": "ABC"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "userID": 1,
+      "bookID": 1,
+      "isComplete": false
+    },
+    {
+      "id": 2,
+      "userID": 2,
+      "bookID": 1,
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "userID": "4",
+      "bookID": "2",
+      "isComplete": true
+    }
+  ],
+  "count": 5
+}

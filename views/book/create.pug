@@ -1,0 +1,11 @@
+extends ../layout/common.pug
+
+block content
+  h1 Thêm sách mới
+  form.form-group(action="/users/books/create", method="POST", id="form-create")
+    label(for="title") Title
+    input#title.form-control(type="text", name="title")
+    label(for="description") Description
+    input#description.form-control(type="text", name="description")
+    
+    button.btn.btn-primary Submit
